@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echo AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=3">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="branding">
+                <h2>Echo <span class="accent">AI</span></h2>
+                <div class="status-badge online">Running</div>
+            </div>
+
+            <!-- Projects Panel -->
+            <section class="panel">
+                <div class="panel-header">
+                    <h3>Projects</h3>
+                    <div style="display:flex; gap:8px;">
+                        <span class="trash-btn" onclick="deleteAllProjects()" title="Delete All Projects">🗑️</span>
+                        <div id="loading-projects" class="loader small hidden"></div>
+                    </div>
+                </div>
+                <div id="project-list" class="list-container">
+                    <div class="empty-state">Loading...</div>
+                </div>
+            </section>
+
+            <!-- Tasks Panel -->
+            <section class="panel">
+                <div class="panel-header">
+                    <h3>Tasks</h3>
+                    <div style="display:flex; gap:8px;">
+                        <span class="trash-btn" onclick="deleteAllTasks()" title="Delete All Tasks">🗑️</span>
+                        <div id="loading-tasks" class="loader small hidden"></div>
+                    </div>
+                </div>
+                <!-- Task List Container -->
+                <div id="task-list" class="list-container">
+                    <!-- Tasks injected here -->
+                    <div class="empty-state">No active tasks</div>
+                </div>
+            </section>
+
+            <!-- Memory Panel -->
+            <section class="panel">
+                <div class="panel-header">
+                    <h3>Memory</h3>
+                    <div style="display:flex; gap:8px;">
+                        <!-- Memory Bulk delete not requested but nice to have? User said "select and delete stuff from memories , tasks , projects" -->
+                        <!-- For now, singular trash button per panel as 'bulk delete' shortcut -->
+                        <div id="loading-memories" class="loader small hidden"></div>
+                    </div>
+                </div>
+                <!-- Memory List Container -->
+                <div id="memory-list" class="list-container">
+                    <!-- Memories injected here -->
+                    <div class="empty-state">No memories yet</div>
+                </div>
+            </section>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-container">
+            <div id="chat-history" class="chat-history">
+                <div class="message assistant-message">
+                    Hello! I'm Echo. I can manage files, run tasks, and remember your preferences.
+                </div>
+            </div>
+
+            <div class="input-area">
+                <input type="text" id="user-input"
+                    placeholder="Type a message (e.g., 'Open Calculator', 'Forget zoom')..." autocomplete="off">
+                <button id="send-btn">Send</button>
+            </div>
+        </main>
+        </main>
+
+        <!-- Batch Actions -->
+        <div id="batch-actions" class="fab-container">
+            <button id="delete-selected-btn" class="fab-btn" onclick="deleteSelectedItems()">Delete Selected</button>
+        </div>
+    </div>
+    <script src="app.js?v=4"></script>
+</body>
+
+</html>

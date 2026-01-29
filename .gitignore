@@ -1,0 +1,21 @@
+
+# Environment variables
+.env
+.venv/
+venv/
+
+# Local State
+memory/
+logs/
+filesystem_index.db
+__pycache__/
+*.pyc
+*.pyo
+
+# System
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
