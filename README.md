@@ -1,7 +1,5 @@
 # Echo: Identity-Aware AI Assistant
 
-![Echo Banner](https://placeholder-image-banner)
-*(Add a screenshot here of the chat interface showing memory recall)*
 
 **Echo** is a next-generation local AI assistant designed to **remember**. Unlike standard chatbots that reset every session, Echo builds a persistent understanding of you—your preferences, facts, and habits—using a custom Retrieval-Augmented Generation (RAG) engine.
 
